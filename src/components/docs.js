@@ -1,13 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react';
+import ModalComponent from './Modal';
 
 export default function Docs() {
-  return (
-    <div className='docs-main'>
-        <h1>Docs Clone</h1>
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    return (
+        <div className='docs-main'>
+            <h1>Docs Clone</h1>
 
-        <button className='add-docs'>
-            Add a Document
-        </button>
-    </div>
-  )
+            <button
+                className='add-docs'
+                onClick={handleOpen}
+            >
+                Add a Document
+            </button>
+
+            <ModalComponent
+                open={open}
+                setOpen={setOpen}
+            />
+        </div>
+    )
 }
