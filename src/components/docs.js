@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import ModalComponent from './Modal';
+import Modal from './Modal';
 import {
     addDoc,
     collection,
@@ -70,7 +70,7 @@ export default function Docs({
                     )
                 })}
             </div>
-            <ModalComponent
+            <Modal
                 open={open}
                 setOpen={setOpen}
                 title={title}
