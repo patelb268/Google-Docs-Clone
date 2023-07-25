@@ -69,4 +69,4 @@ This project is licensed under the [BSD3 License](LICENSE).
 
 ## Acknowledgments
 
-- Thanks to the creators of ReactJS and Firebase for providing powerful tools for building web applications.
+- Thanks to the creators of ReactJS and Firebase for providing powerful tools for developing web applications.
