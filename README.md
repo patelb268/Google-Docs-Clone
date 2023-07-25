@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# Google-Docs-Clone
+<img width="691" alt="GDC" src="https://github.com/patelb268/Google-Docs-Clone/assets/109325051/247a6bf1-f0da-4734-a62f-de99dc9882c8">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a Google Docs clone built using ReactJS and Firebase. It allows users to create, edit, and collaborate on documents in real-time, similar to the functionality provided by Google Docs.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
 
-### `npm start`
+- **Real-time Collaboration:** Multiple users can collaborate on the same document simultaneously, and changes made by one user will be immediately reflected for all others.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Rich Text Editing:** The editor supports rich text formatting, including bold, italic, underline, bullet lists, numbered lists, headings, etc.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository to your local machine:
+   
+        https://github.com/patelb268/Google-Docs-Clone.git
+        cd Google-Docs-Clone
+   
+2. Install the required dependencies:
 
-### `npm run build`
+        npm install
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### How to Add Firebase to Our App
+Now, let's install Firebase for the database. Simply install Firebase using the below command:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    npm install firebase
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Head over to https://firebase.google.com/ and click `Go to console` at the top right.
+   ![Screenshot-2022-05-07-120526](https://github.com/patelb268/Google-Docs-Clone/assets/109325051/fc74f140-033a-4cd6-b996-4498093ae41f)
 
-### `npm run eject`
+Then, click Add Project.
+![Screenshot-2022-05-07-120625](https://github.com/patelb268/Google-Docs-Clone/assets/109325051/046e57ba-48cf-4799-ba83-d376a2f4a821)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+After creating the Project, click the code button to create a web app in Firebase. Give it a name and we are ready to go.
+![Screenshot-2022-05-07-120803](https://github.com/patelb268/Google-Docs-Clone/assets/109325051/e8eae40d-7f98-4b51-a586-8424e9a5239f)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+add all config data to firebaseConfig.js
+### Example
+![Screenshot-2022-05-07-120857](https://github.com/patelb268/Google-Docs-Clone/assets/109325051/ec1e3c2b-0949-490b-b41e-f792d98478a3)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+configure Firestore Database.
+Go to Firestore database from the left sidebar, and click Create Database.
+![Screenshot-2022-05-07-121804](https://github.com/patelb268/Google-Docs-Clone/assets/109325051/e88cd196-4a97-4904-bf47-0564140a14a8)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+start Database in Production Mode. So, click Next, and then Enable.
+![Screenshot-2022-05-07-121900](https://github.com/patelb268/Google-Docs-Clone/assets/109325051/802883c7-80bf-4936-aea7-15faf600d7a3)
 
-## Learn More
+make the security rules public. Now anyone can write data or read them, even without authentication.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+          rules_version = '2';
+          service cloud.firestore {
+            match /databases/{database}/documents {
+              match /{document=**} {
+                allow read, write;
+              }
+            }
+          }
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Contributing
 
-### Code Splitting
+Contributions to this project are welcome. If you find any issues or have feature suggestions, please open an issue or submit a pull request.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## License
 
-### Analyzing the Bundle Size
+This project is licensed under the [BSD3 License](LICENSE).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+## Acknowledgments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Thanks to the creators of ReactJS and Firebase for providing powerful tools for building web applications.
